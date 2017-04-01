@@ -42,12 +42,12 @@ try {
 		$return['eqLogics'] = array();
 		if (init('object_id') == '') {
 			foreach (object::all() as $object) {
-				foreach ($object->getEqLogic(true, false, 'telco') as $sonos) {
+				foreach ($object->getEqLogic(true, false, 'telco') as $telco) {
 					$return['eqLogics'][] = $telco->toHtml(init('version'));
 				}
 			}
 		} else {
-			foreach ($object->getEqLogic(true, false, 'telco') as $sonos) {
+			foreach ($object->getEqLogic(true, false, 'telco') as $telco) {
 				$return['eqLogics'][] = $telco->toHtml(init('version'));
 			}
 			foreach (object::buildTree($object) as $child) {

@@ -58,7 +58,7 @@ function addCmdToTable(_cmd) {
     tr += '<span class="subType" subType="' + init(_cmd.subType) + '"></span>';
     tr += '</td>';
 	tr += '<td class="action">';
-	tr += '<input class="cmdAttr form-control input-sm" data-l1key="configuration" data-type="' + _cmd.type + '" data-l2key="action"  style="margin-bottom : 5px;width : 80%; display : inline-block;" disabled>';
+	tr += '<input class="cmdAttr form-control input-sm" data-l1key="configuration" data-type="' + _cmd.type + '" data-l2key="action"  style="margin-bottom : 5px;width : 80%; display : inline-block;">';
 	tr += '<a class="btn btn-default btn-sm cursor listCmdActionOn" data-type="' + _cmd.type + '" data-input="action" style="margin-left : 5px;"><i class="fa fa-list-alt "></i></a>';
 	tr += '<a class="iconeOn btn btn-default btn-sm" data-l1key="chooseIcon"><i class="fa fa-flag"></i> {{Icône}}</a>';
 	tr += ' <span class="cmdAttr iconeAttrOn label label-info cursor"  data-l1key="configuration" data-l2key="iconOn"  style="font-size : 1em;" ></span>';
