@@ -25,6 +25,7 @@ try {
     }
 	
     if (init('action') == 'LaunchAction') {
+		log::add('telco','debug', ' LaunchAction Ajax ');
         $telco = telco::LaunchAction(init('id'),init('cmd'));
 		ajax::success();
     }

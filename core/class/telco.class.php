@@ -36,14 +36,15 @@ class telco extends eqLogic {
 		if (!is_object($cmd)) {
 			return;
 		}
-		$actions = $cmd->getConfiguration('action');
-		$cmds = str_replace('#', '', $actions);
-		if ($cmds != "") {
-			$cmd = cmd::byId($cmds);
-			if (is_object($cmd)) {
-				$cmd->execCmd();
-			}
-		}	
+		$action = $cmd->getConfiguration('action');
+		$options = $cmd->getConfiguration('options')[0]['options'];
+		try {
+			scenarioExpression::createAndExec('action', $action, $options);
+		} catch (Exception $e) {
+			log::add('telco', 'error', __('Erreur lors de l\'éxecution de ', __FILE__) . $cmd . __('. Détails : ', __FILE__) . $e->getMessage());
+		}		
+		
+		
 	}
 
 	public static function  AddCmd($cmds,$logs,$eqLogic) {
@@ -59,7 +60,7 @@ class telco extends eqLogic {
 					$Commande->setType('action');
 					$Commande->setSubType('other');
 				}
-	
+				$Commande->setConfiguration('type','multimedia');
 				$Commande->save();
 	
 			}
@@ -100,6 +101,9 @@ class telco extends eqLogic {
     }
 
     public function preSave() {
+		if ($this->getConfiguration("type") == "") {
+			$this->setConfiguration("type","multimedia");
+		}
         
     }
 
@@ -112,10 +116,11 @@ class telco extends eqLogic {
     }
 
     public function postUpdate() {
-		
-		$cmd = array('poweroff','television','video','1','2','3','4','5','6','7','8','9','0','menu','up','info','left','share','right','exit','down','return','volume-up','volume-down','volume-off','ch+','ch-','backward','forward','play','stop','registered','pause');
-		$logical = array('poweroff','television','video','un','deux','trois','quatre','cinq','six','sept','huit','neuf','zero','menu','up','info','left','share','right','exit','down','return','volume-up','volume-down','volume-off','canalUp','canalDown','backward','forward','play','stop','registered','pause');
-		self::AddCmd($cmd,$logical,$this);
+		if ($this->getConfiguration("type") == "multimedia") {
+			$cmd = array('poweroff','television','video','1','2','3','4','5','6','7','8','9','0','menu','up','info','left','share','right','exit','down','return','volume-up','volume-down','volume-off','ch+','ch-','backward','forward','play','stop','registered','pause');
+			$logical = array('poweroff','television','video','un','deux','trois','quatre','cinq','six','sept','huit','neuf','zero','menu','up','info','left','share','right','exit','down','return','volume-up','volume-down','volume-off','canalUp','canalDown','backward','forward','play','stop','registered','pause');
+			self::AddCmd($cmd,$logical,$this);
+		}
 		
         
     }
@@ -131,16 +136,34 @@ class telco extends eqLogic {
 
 	public function toHtml($_version = 'dashboard') {
 		
-		$replace = $this->preToHtml($_version, array('#background-color#' => '#4a89dc'));
+		$replace = $this->preToHtml($_version);
 		if (!is_array($replace)) {
 			return $replace;
 		}
 		
 		$version = jeedom::versionAlias($_version);
-		
-		return $this->postToHtml($_version, template_replace($replace, getTemplate('core', $version, 'telco', 'telco')));
-
-
+		if ($this->getConfiguration("type") == "custom" ) {
+			if ($this->getIsEnable()) {
+				$cmd_html = '';
+				foreach ($this->getCmd() as $cmd) {
+					if ($cmd->getIsVisible()) {
+							$cmd_template = getTemplate('core', $_version, 'custom_cmd', 'telco');
+							($cmd->getDisplay('icon') != '') ? $icon = $cmd->getDisplay('icon') : $icon = $cmd->getName() ;
+							$cmd_replace = array(
+								'#id#' => $cmd->getId(),
+								'#name#' => $cmd->getName(), //($cmd->getDisplay('icon') != '') ? $cmd->getDisplay('icon') : $cmd->getName(),
+								'#dashicon#' => $icon, 
+								'#color#' => $cmd->getConfiguration('color')
+							);
+							
+							// Construction du HTML pour #cmd#
+							$cmd_html .= template_replace($cmd_replace, $cmd_template);
+					}
+				}
+				$replace['#cmd#'] = $cmd_html;			
+			}
+		}
+		return template_replace($replace, getTemplate('core', $_version, $this->getConfiguration("type"), 'telco'));
 	}
 
  
@@ -165,7 +188,13 @@ class telcoCmd extends cmd {
      */
 
     public function execute($_options = array()) {
-        
+			$cmd = $this->getConfiguration('action');
+			$options = $this->getConfiguration('options')[0]['options'];
+			try {
+				scenarioExpression::createAndExec('action', $cmd, $options);
+			} catch (Exception $e) {
+				log::add('telco', 'error', __('Erreur lors de l\'éxecution de ', __FILE__) . $cmd . __('. Détails : ', __FILE__) . $e->getMessage());
+			}
     }
 
     /*     * **********************Getteur Setteur*************************** */

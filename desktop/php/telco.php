@@ -4,6 +4,7 @@ if (!isConnect('admin')) {
 }
 sendVarToJS('eqType', 'telco');
 $eqLogics = eqLogic::byType('telco');
+$plugin = plugin::byId('telco');
 ?>
 
 <div class="row row-overflow">
@@ -22,38 +23,39 @@ foreach ($eqLogics as $eqLogic) {
    </div>
 
    <div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;">
-    <legend>{{Mes telcos}}
-    </legend>
 
     <div class="eqLogicThumbnailContainer">
-      <div class="cursor eqLogicAction" data-action="add" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
+      <div class="cursor eqLogicAction" data-action="addEquipement" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
          <center>
             <i class="fa fa-plus-circle" style="font-size : 7em;color:#00A9EC;"></i>
         </center>
         <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#00A9EC"><center>{{Ajouter}}</center></span>
+        </div>
     </div>
-    <?php
-foreach ($eqLogics as $eqLogic) {
-	echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >';
-	echo "<center>";
-	echo '<img src="plugins/telco/doc/images/telco_icon.png" height="105" width="95" />';
-	echo "</center>";
-	echo '<span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>' . $eqLogic->getHumanName(true, true) . '</center></span>';
-	echo '</div>';
-}
-?>
+    <legend>{{Mes télécommandes}} </legend>
+    <div class="eqLogicThumbnailContainer">
+		<?php
+    foreach ($eqLogics as $eqLogic) {
+        echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >';
+        echo "<center>";
+         echo '<img src="' . $plugin->getPathImgIcon() . '" height="105" width="95" />';
+        echo "</center>";
+        echo '<span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>' . $eqLogic->getHumanName(true, true) . '</center></span>';
+        echo '</div>';
+    }
+    ?>
 </div>
 </div>
 
 <div class="col-lg-10 col-md-9 col-sm-8 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
 
      <a class="btn btn-success eqLogicAction pull-right" data-action="save"><i class="fa fa-check-circle"></i> {{Sauvegarder}}</a>
-    <a class="btn btn-danger eqLogicAction pull-right" data-action="remove"><i class="fa fa-minus-circle"></i> {{Supprimer}}</a>
+     <a class="btn btn-danger eqLogicAction pull-right" data-action="remove"><i class="fa fa-minus-circle"></i> {{Supprimer}}</a>
+     <a class="btn btn-default eqLogicAction pull-right" data-action="configure"><i class="fa fa-cogs"></i> {{Configuration avancée}}</a>
      <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation"><a href="#" class="eqLogicAction" aria-controls="home" role="tab" data-toggle="tab" data-action="returnToThumbnailDisplay"><i class="fa fa-arrow-circle-left"></i></a></li>
+      <li role="presentation"><a href="" class="eqLogicAction" aria-controls="home" role="tab" data-toggle="tab" data-action="returnToThumbnailDisplay"><i class="fa fa-arrow-circle-left"></i></a></li>
       <li role="presentation" class="active"><a href="#eqlogictab" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-tachometer"></i> {{Equipement}}</a></li>
       <li role="presentation"><a href="#infocmd" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-list-alt"></i> {{Commandes}}</a></li>
-      <i class='fa fa-cogs eqLogicAction pull-right cursor expertModeVisible' data-action='configure'></i>
     </ul>
 	<div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
 		<div role="tabpanel" class="tab-pane active" id="eqlogictab"> 
@@ -112,16 +114,41 @@ foreach (object::all() as $object) {
 
 <div role="tabpanel" class="tab-pane" id="infocmd">  
 
-<table id="table_cmd" class="table table-bordered table-condensed">
-    <thead>
-        <tr>
-            <th>{{Nom}}</th><th>{{Type}}</th><th>{{Action}}</th>
-        </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
+        <table id="table_cmd" class="table table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th>{{Nom}}</th><th>{{Action}}</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+		<div id="tab_custom">            
+         
+        <a class="btn btn-success btn-sm cmdAction pull-left" data-action="addCmdMulti" style="margin-top:5px;"><i class="fa fa-plus-circle"></i> {{Commandes}}</a><br/><br/>
+        <table id="table_custom" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th style="width: 400px;">{{ Nom }}</th>
+                            <th >{{ Couleur }}</th>
+                            <th>{{ Actions à éxécuter }}</th>
+                            <th style="width: 150px;">{{Affichage}}</th>
+                            <th style="width: 50px;">{{Actions}}</th>
+                        </tr>
+                    </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        
+        	</div>
+
+
+
 </div>
+
+
 </div>
 
 </div>
