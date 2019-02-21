@@ -163,7 +163,7 @@ class telco extends eqLogic {
 				$replace['#cmd#'] = $cmd_html;			
 			}
 		}
-		return template_replace($replace, getTemplate('core', $_version, $this->getConfiguration("type"), 'telco'));
+		return template_replace($replace, getTemplate('core', $version, $this->getConfiguration("type"), 'telco'));
 	}
 
  
