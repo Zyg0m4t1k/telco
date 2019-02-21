@@ -22,11 +22,11 @@ $("#table_cmd").sortable({axis: "y", cursor: "move", items: ".cmd", placeholder:
 $('.eqLogicAction[data-action=addEquipement]').on('click', function () {	
     bootbox.confirm("<form id='infos' class='form-horizontal'><fieldset>\
         <div class='form-group'>\
-          <label >Nom de l'équipement</label>\
-          <input type='text' class='form-control' id='name' placeholder='Nom' ></input>\
+          <label style='margin: auto;display: block;' >Nom de l'équipement</label>\
+          <input type='text' class='form-control' id='name' placeholder='Nom' style='margin: auto;display: block;'></input>\
         </div>\
         <div class='form-group'>\
-		<select id='sel_type' class='form-control'>\
+		<select id='sel_type' class='form-control' style='margin: auto;display: block;'>\
 		  <option  value='multimedia'>{{ Multimedia }}</option>\
 		   <option  value='custom'>{{ Personnalisée }}</option>\
 		</select>\
