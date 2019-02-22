@@ -147,7 +147,7 @@ class telco extends eqLogic {
 				$cmd_html = '';
 				foreach ($this->getCmd() as $cmd) {
 					if ($cmd->getIsVisible()) {
-							$cmd_template = getTemplate('core', $_version, 'custom_cmd', 'telco');
+							$cmd_template = getTemplate('core', $version, 'custom_cmd', 'telco');
 							($cmd->getDisplay('icon') != '') ? $icon = $cmd->getDisplay('icon') : $icon = $cmd->getName() ;
 							$cmd_replace = array(
 								'#id#' => $cmd->getId(),
@@ -156,11 +156,10 @@ class telco extends eqLogic {
 								'#color#' => $cmd->getConfiguration('color')
 							);
 							
-							// Construction du HTML pour #cmd#
 							$cmd_html .= template_replace($cmd_replace, $cmd_template);
 					}
 				}
-				$replace['#cmd#'] = $cmd_html;			
+				$replace['#cmd#'] = $cmd_html;
 			}
 		}
 		return template_replace($replace, getTemplate('core', $version, $this->getConfiguration("type"), 'telco'));
