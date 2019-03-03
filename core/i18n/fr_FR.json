@@ -1,27 +1,12 @@
 {
-    "plugins\/telco\/desktop\/php\/telco.php": {
-        "Ajouter un telco": "Ajouter un telco",
-        "Rechercher": "Rechercher",
-        "Ajouter": "Ajouter",
-        "Mes télécommandes": "Mes télécommandes",
-        "Sauvegarder": "Sauvegarder",
-        "Supprimer": "Supprimer",
-        "Configuration avancée": "Configuration avancée",
-        "Equipement": "Equipement",
-        "Commandes": "Commandes",
-        "Nom de l'équipement": "Nom de l'équipement",
-        "Nom de l'équipement telco": "Nom de l'équipement telco",
-        "Objet parent": "Objet parent",
-        "Aucun": "Aucun",
-        "Catégorie": "Catégorie",
-        "Activer": "Activer",
-        "Visible": "Visible",
+    "plugins\/telco\/desktop\/js\/telco.js": {
+        " Multimedia ": " Multimedia ",
+        " Personnalisée ": " Personnalisée ",
+        "Il faut donner un nom à l\\'équipement.": "Il faut donner un nom à l\\'équipement.",
         "Nom": "Nom",
-        "Action": "Action",
-        " Nom ": " Nom ",
-        " Couleur ": " Couleur ",
-        " Actions à éxécuter ": " Actions à éxécuter ",
-        "Affichage": "Affichage",
-        "Actions": "Actions"
+        "Sélectionner un mot-clé": "Sélectionner un mot-clé",
+        "Tester": "Tester",
+        " Couleur": " Couleur",
+        "Afficher": "Afficher"
     }
 }
