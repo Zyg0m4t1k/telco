@@ -23,5 +23,15 @@
         " Actions à éxécuter ": " Actions à éxécuter ",
         "Affichage": "Affichage",
         "Actions": "Actions"
+    },
+    "plugins\/telco\/desktop\/js\/telco.js": {
+        " Multimedia ": " Multimedia ",
+        " Personnalisée ": " Personnalisée ",
+        "Il faut donner un nom à l\\'équipement.": "Il faut donner un nom à l\\'équipement.",
+        "Nom": "Nom",
+        "Sélectionner un mot-clé": "Sélectionner un mot-clé",
+        "Tester": "Tester",
+        " Couleur": " Couleur",
+        "Afficher": "Afficher"
     }
 }
