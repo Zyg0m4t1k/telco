@@ -22,7 +22,9 @@
         " Couleur ": " Couleur ",
         " Actions à éxécuter ": " Actions à éxécuter ",
         "Affichage": "Affichage",
-        "Actions": "Actions"
+        "Actions": "Actions",
+        "Gestion": "Gestion",
+        "Configuration": "Configuration"
     },
     "plugins\/telco\/desktop\/js\/telco.js": {
         " Multimedia ": " Multimedia ",

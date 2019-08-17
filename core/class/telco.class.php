@@ -26,8 +26,6 @@ class telco extends eqLogic {
 	
 	public static $_widgetPossibility = array('custom' => true);
 
-
-
     /*     * ***********************Methode static*************************** */
 
 	public static function LaunchAction($id,$cmd) {
@@ -121,8 +119,6 @@ class telco extends eqLogic {
 			$logical = array('poweroff','television','video','un','deux','trois','quatre','cinq','six','sept','huit','neuf','zero','menu','up','info','left','share','right','exit','down','return','volume-up','volume-down','volume-off','canalUp','canalDown','backward','forward','play','stop','registered','pause');
 			self::AddCmd($cmd,$logical,$this);
 		}
-		
-        
     }
 
     public function preRemove() {
