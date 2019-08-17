@@ -11,7 +11,7 @@ $plugin = plugin::byId('telco');
 	<div class="col-xs-12 eqLogicThumbnailDisplay">
 		<legend><i class="fas fa-cog"></i> {{Gestion}}</legend>
         <div class="eqLogicThumbnailContainer">
-        	<div class="cursor eqLogicAction logoPrimary" data-action="addEquipement"  >
+        	<div class="cursor eqLogicAction logoSecondary" data-action="addEquipement"  >
                 <i class="fas fa-plus-circle"></i>
                 <br>
                 <span>{{Ajouter}}</span>
@@ -66,7 +66,7 @@ $plugin = plugin::byId('telco');
 								<select id="sel_object" class="eqLogicAttr form-control" data-l1key="object_id">
 									<option value="">{{Aucun}}</option>
 									<?php
-										foreach (object::all() as $object) {
+										foreach (jeeObject::all() as $object) {
 											echo '<option value="' . $object->getId() . '">' . $object->getName() . '</option>';
 										}
 									?>
