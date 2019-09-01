@@ -32,17 +32,17 @@ try {
 	
 	if (init('action') == 'getTelco') {
 		if (init('object_id') == '') {
-			$object = object::byId($_SESSION['user']->getOptions('defaultDashboardObject'));
+			$object = jeeObject::byId($_SESSION['user']->getOptions('defaultDashboardObject'));
 		} else {
-			$object = object::byId(init('object_id'));
+			$object = jeeObject::byId(init('object_id'));
 		}
 		if (!is_object($object)) {
-			$object = object::rootObject();
+			$object = jeeObject::rootObject();
 		}
 		$return = array();
 		$return['eqLogics'] = array();
 		if (init('object_id') == '') {
-			foreach (object::all() as $object) {
+			foreach (jeeObject::all() as $object) {
 				foreach ($object->getEqLogic(true, false, 'telco') as $telco) {
 					$return['eqLogics'][] = $telco->toHtml(init('version'));
 				}
@@ -51,7 +51,7 @@ try {
 			foreach ($object->getEqLogic(true, false, 'telco') as $telco) {
 				$return['eqLogics'][] = $telco->toHtml(init('version'));
 			}
-			foreach (object::buildTree($object) as $child) {
+			foreach (jeeObject::buildTree($object) as $child) {
 				$telcoss = $child->getEqLogic(true, false, 'telco');
 				if (count($telcoss) > 0) {
 					foreach ($telcoss as $telcos) {
