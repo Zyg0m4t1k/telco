@@ -29,7 +29,6 @@ function telco_update() {
 		} catch (Exception $e) {
 		}
 	}	
-    
 }
 
 
