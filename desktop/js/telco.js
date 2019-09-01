@@ -194,17 +194,17 @@ function addCmdToTable(_cmd ,_type) {
 		tr += '</td>';
 		tr += '<td class="action">';
 		tr += '<input class="cmdAttr form-control input-sm" data-l1key="configuration" data-type="' + _cmd.type + '" data-l2key="action"  style="margin-bottom : 5px;width : 80%; display : inline-block;">';
-		tr += '<a class="btn btn-success btn-sm listAction" data-type="action_alarm" title="{{Sélectionner un mot-clé}}"><i class="fa fa-tasks"></i></a>';
-		tr += '<a class="btn btn-default btn-sm cursor listCmdActionOn" data-type="' + _cmd.type + '" data-input="action" style="margin-left : 5px;"><i class="fa fa-list-alt "></i></a>';
+		tr += '<a class="btn btn-success btn-sm listAction" data-type="action_alarm" title="{{Sélectionner un mot-clé}}"><i class="fas fa-tasks"></i></a>';
+		tr += '<a class="btn btn-default btn-sm cursor listCmdActionOn" data-type="' + _cmd.type + '" data-input="action" style="margin-left : 5px;"><i class="fas fa-list-alt "></i></a>';
 		tr += '<div class="col-lg-6 actionOptions" data-cmd_id="' + init(_cmd.id) + '">';
 		tr += jeedom.cmd.displayActionOption(init(_cmd.configuration.action, ''), _cmd.configuration.options[0].options);
 		tr += '</div>';		
 		tr += '</td>';	
 		tr += '<td>';
 		if (is_numeric(_cmd.id)) {
-			tr += '<a class="btn btn-default btn-xs cmdAction" data-action="test"><i class="fa fa-rss"></i> {{Tester}}</a>';
+			tr += '<a class="btn btn-default btn-xs cmdAction" data-action="test"><i class="fas fa-rss"></i> {{Tester}}</a>';
 		}		
-		tr += '<i class="fa fa-minus-circle pull-right cmdAction cursor" data-action="remove"></i>';
+		tr += '<i class="fas fa-minus-circle pull-right cmdAction cursor" data-action="remove"></i>';
 		tr += '</td>';
 		tr += '</tr>';
 		$('#table_cmd tbody').append(tr);
@@ -225,7 +225,7 @@ function addCmdToTable(_cmd ,_type) {
 		tr += '<input class="cmdAttr form-control input-sm" data-l1key="id" style="display:none">';
 		tr += '<div class="row">';
 		tr += '<div class="col-sm-4">';
-		tr += '<a class="cmdAction btn btn-default btn-sm" data-l1key="chooseIcon"><i class="fa fa-flag"></i> Icone</a>';
+		tr += '<a class="cmdAction btn btn-default btn-sm" data-l1key="chooseIcon"><i class="fas fa-flag"></i> Icone</a>';
 		tr += '<span class="cmdAttr" data-l1key="display" data-l2key="icon" style="margin-left : 10px;"></span>';
 		tr += '</div>';
 		tr += '<div class="col-sm-8">';
@@ -238,8 +238,8 @@ function addCmdToTable(_cmd ,_type) {
 		tr += '</td>';
 		tr += '<td class="action">';
 		tr += '<input class="cmdAttr form-control input-sm" data-l1key="configuration" data-type="action" data-l2key="action"  style="margin-bottom : 5px;width : 80%; display : inline-block;">';
-		tr += '<a class="btn btn-success btn-sm listAction" data-type="action_alarm" title="{{Sélectionner un mot-clé}}"><i class="fa fa-tasks"></i></a>';
-		tr += '<a class="btn btn-default btn-sm cursor listCmdActionOn" data-type="action" data-input="action" style="margin-left : 5px;"><i class="fa fa-list-alt "></i></a>';
+		tr += '<a class="btn btn-success btn-sm listAction" data-type="action_alarm" title="{{Sélectionner un mot-clé}}"><i class="fas fa-tasks"></i></a>';
+		tr += '<a class="btn btn-default btn-sm cursor listCmdActionOn" data-type="action" data-input="action" style="margin-left : 5px;"><i class="fas fa-list-alt "></i></a>';
 		tr += '<div class="col-lg-6 actionOptions" data-cmd_id="' + init(_cmd.id) + '">';
 		tr += jeedom.cmd.displayActionOption(init(_cmd.configuration.action, ''), _cmd.configuration.options[0].options);
 		tr += '</div>';
@@ -249,9 +249,9 @@ function addCmdToTable(_cmd ,_type) {
 		tr += '</td>';
 		tr += '<td>';
 		if (is_numeric(_cmd.id)) {
-			tr += '<a class="btn btn-default btn-xs cmdAction" data-action="test"><i class="fa fa-rss"></i> {{Tester}}</a>';
+			tr += '<a class="btn btn-default btn-xs cmdAction" data-action="test"><i class="fas fa-rss"></i> {{Tester}}</a>';
 		}
-		tr += '<i class="fa fa-minus-circle pull-right cmdAction cursor" data-action="remove"></i></td>';
+		tr += '<i class="fas fa-minus-circle pull-right cmdAction cursor" data-action="remove"></i></td>';
 		tr += '</tr>';
 		$('#table_custom tbody').append(tr);
 		$('#table_custom tbody tr:last').setValues(_cmd, '.cmdAttr');

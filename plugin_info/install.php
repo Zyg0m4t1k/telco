@@ -23,6 +23,12 @@ function telco_install() {
 }
 
 function telco_update() {
+	foreach (telco::byType('telco', true) as $telco) {
+		try {
+			$telco->save();
+		} catch (Exception $e) {
+		}
+	}	
     
 }
 
