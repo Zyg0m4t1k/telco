@@ -1,3 +1,9 @@
+10-10-2020
+===
+
+- v4 compatible (info.json)
+
+
 XX-08-2019
 ===
 
