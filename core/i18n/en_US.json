@@ -1,0 +1,47 @@
+{
+    "plugins\/telco\/core\/ajax\/telco.ajax.php": {
+        "401 - Accès non autorisé": "401 - Unauthorized access",
+        "Aucune méthode correspondante à : ": ""
+    },
+    "plugins\/telco\/core\/class\/telco.class.php": {
+        ". Détails : ": "",
+        "Erreur lors de l\\'éxecution de ": ""
+    },
+    "plugins\/telco\/desktop\/js\/telco.js": {
+        " Couleur": "",
+        " Multimedia ": "",
+        " Personnalisée ": "",
+        "Afficher": "Show",
+        "Il faut donner un nom à l'équipement.": "",
+        "Nom": "Name",
+        "Sélectionner un mot-clé": "Select a keyword",
+        "Tester": "Test"
+    },
+    "plugins\/telco\/desktop\/php\/telco.php": {
+        " Actions à éxécuter ": "",
+        " Couleur ": "",
+        " Nom ": "",
+        "401 - Accès non autorisé": "401 - Unauthorized access",
+        "Action": "Action",
+        "Actions": "Actions",
+        "Activer": "Enable",
+        "Affichage": "Display",
+        "Ajouter": "Add",
+        "Aucun": "None",
+        "Catégorie": "Category",
+        "Commandes": "Commands",
+        "Configuration": "Configuration",
+        "Configuration avancée": "Advanced configuration",
+        "Equipement": "Equipment",
+        "Gestion": "Management",
+        "Mes télécommandes": "",
+        "Nom": "Name",
+        "Nom de l'équipement": "",
+        "Nom de l'équipement telco": "",
+        "Objet parent": "Parent object",
+        "Rechercher": "Search",
+        "Sauvegarder": "Save",
+        "Supprimer": "Delete",
+        "Visible": "Visible"
+    }
+}
