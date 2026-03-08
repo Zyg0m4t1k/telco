@@ -14,60 +14,75 @@
  * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
  */
 
- function initTelcoPanel(_object_id) {
-    jeedom.object.all({
-        error: function (error) {
-            $('#div_alert').showAlert({message: error.message, level: 'danger'});
-        },
-        success: function (objects) {
-            var li = ' <ul data-role="listview">';
-            for (var i in objects) {
-                if (objects[i].isVisible == 1) {
-                    var icon = '';
-                    if (isset(objects[i].display) && isset(objects[i].display.icon)) {
-                        icon = objects[i].display.icon;
-                    }
-                    li += '<li></span><a href="#" class="link" data-page="panel" data-plugin="telco" data-title="' + icon.replace(/\"/g, "\'") + ' ' + objects[i].name + '" data-option="' + objects[i].id + '"><span>' + icon + '</span> ' + objects[i].name + '</a></li>';
-                }
-            }
-            li += '</ul>';
-            panel(li);
+function initTelcoPanel(_object_id) {
+  jeedom.object.all({
+    error: function (error) {
+      $('#div_alert').showAlert({ message: error.message, level: 'danger' });
+    },
+    success: function (objects) {
+      var li = '<ul data-role="listview">';
+      for (var i in objects) {
+        if (objects[i].isVisible == 1) {
+          var icon = '';
+          if (isset(objects[i].display) && isset(objects[i].display.icon)) {
+            icon = objects[i].display.icon;
+          }
+          li +=
+            '<li><a href="#" class="link" data-page="panel" data-plugin="telco" data-title="' +
+            icon.replace(/\"/g, "\'") +
+            ' ' +
+            objects[i].name +
+            '" data-option="' +
+            objects[i].id +
+            '"><span>' +
+            icon +
+            '</span> ' +
+            objects[i].name +
+            '</a></li>';
         }
-    });
-    displayTelco(_object_id);
+      }
+      li += '</ul>';
+      jeedomUtils.loadPanel(li);
+    },
+  });
 
-    $(window).on("orientationchange", function (event) {
-        setTileSize('.eqLogic');
-        $('#div_displayEquipementTelco').packery({gutter : 4});
-    });
+  displayTelco(_object_id);
+
+  $(window).on('orientationchange', function () {
+    setTileSize('.eqLogic');
+    $('#div_displayEquipementTelco').packery({ gutter: 4 });
+  });
 }
 
 function displayTelco(_object_id) {
-    $.showLoading();
-    $.ajax({
-        type: 'POST',
-        url: 'plugins/telco/core/ajax/telco.ajax.php',
-        data: {
-            action: 'getTelco',
-            object_id: _object_id,
-            version: 'mview'
-        },
-        dataType: 'json',
-        error: function (request, status, error) {
-            handleAjaxError(request, status, error);
-        },
-        success: function (data) {
-            if (data.state != 'ok') {
-                $('#div_alert').showAlert({message: data.result, level: 'danger'});
-                return;
-            }
-            $('#div_displayEquipementTelco').empty();
-            for (var i in data.result.eqLogics) {
-                $('#div_displayEquipementTelco').append(data.result.eqLogics[i]).trigger('create');
-            }
-            setTileSize('.eqLogic');
-            $('#div_displayEquipementTelco').packery({gutter : 4});
-            $.hideLoading();
-        }
-    });
+  $.showLoading();
+  $.ajax({
+    type: 'POST',
+    url: 'plugins/telco/core/ajax/telco.ajax.php',
+    data: {
+      action: 'getTelco',
+      object_id: _object_id,
+      version: 'mobile',
+    },
+    dataType: 'json',
+    error: function (request, status, error) {
+      handleAjaxError(request, status, error);
+    },
+    success: function (data) {
+      if (data.state != 'ok') {
+        $('#div_alert').showAlert({ message: data.result, level: 'danger' });
+        $.hideLoading();
+        return;
+      }
+
+      $('#div_displayEquipementTelco').empty();
+      for (var i in data.result.eqLogics) {
+        $('#div_displayEquipementTelco').append(data.result.eqLogics[i]).trigger('create');
+      }
+
+      setTileSize('.eqLogic');
+      $('#div_displayEquipementTelco').packery({ gutter: 4 });
+      $.hideLoading();
+    },
+  });
 }
