@@ -1,0 +1,47 @@
+{
+    "plugins\/telco\/core\/ajax\/telco.ajax.php": {
+        "401 - Accès non autorisé": "401 - Nicht autorisierter Zugriff",
+        "Aucune méthode correspondante à : ": ""
+    },
+    "plugins\/telco\/core\/class\/telco.class.php": {
+        ". Détails : ": "",
+        "Erreur lors de l\\'éxecution de ": ""
+    },
+    "plugins\/telco\/desktop\/js\/telco.js": {
+        " Couleur": "",
+        " Multimedia ": "",
+        " Personnalisée ": "",
+        "Afficher": "Anzeige",
+        "Il faut donner un nom à l'équipement.": "",
+        "Nom": "Name",
+        "Sélectionner un mot-clé": "Schlüsselwort auswählen",
+        "Tester": "Prüfung"
+    },
+    "plugins\/telco\/desktop\/php\/telco.php": {
+        " Actions à éxécuter ": "",
+        " Couleur ": "",
+        " Nom ": "",
+        "401 - Accès non autorisé": "401 - Nicht autorisierter Zugriff",
+        "Action": "Aktion",
+        "Actions": "Lager",
+        "Activer": "Aktivieren",
+        "Affichage": "Anzeige",
+        "Ajouter": "Addieren",
+        "Aucun": "Nein",
+        "Catégorie": "Kategorie",
+        "Commandes": "Befehle",
+        "Configuration": "Konfiguration",
+        "Configuration avancée": "Erweiterte Konfiguration",
+        "Equipement": "Gerät",
+        "Gestion": "Management",
+        "Mes télécommandes": "",
+        "Nom": "Name",
+        "Nom de l'équipement": "",
+        "Nom de l'équipement telco": "",
+        "Objet parent": "Übergeordnetes Objekt",
+        "Rechercher": "Suchen nach",
+        "Sauvegarder": "Zu schützen",
+        "Supprimer": "Entfernen",
+        "Visible": "Sichtbar"
+    }
+}
