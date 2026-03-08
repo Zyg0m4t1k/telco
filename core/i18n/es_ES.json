@@ -1,0 +1,47 @@
+{
+    "plugins\/telco\/core\/ajax\/telco.ajax.php": {
+        "401 - Accès non autorisé": "401 - Acceso no autorizado",
+        "Aucune méthode correspondante à : ": "Ningún método coincide con: "
+    },
+    "plugins\/telco\/core\/class\/telco.class.php": {
+        ". Détails : ": ". Detalles: ",
+        "Erreur lors de l\\'éxecution de ": "Error durante la ejecución de "
+    },
+    "plugins\/telco\/desktop\/js\/telco.js": {
+        " Couleur": " Color",
+        " Multimedia ": " Multimedia ",
+        " Personnalisée ": " Personalizada ",
+        "Afficher": "Mostrar",
+        "Il faut donner un nom à l'équipement.": "Debe proporcionar un nombre al equipo.",
+        "Nom": "Nombre",
+        "Sélectionner un mot-clé": "Seleccionar una palabra clave",
+        "Tester": "Probar"
+    },
+    "plugins\/telco\/desktop\/php\/telco.php": {
+        " Actions à éxécuter ": " Acciones a ejecutar ",
+        " Couleur ": " Color ",
+        " Nom ": " Nombre ",
+        "401 - Accès non autorisé": "401 - Acceso no autorizado",
+        "Action": "Acción",
+        "Actions": "Acciones",
+        "Activer": "Activar",
+        "Affichage": "Visualización",
+        "Ajouter": "Añadir",
+        "Aucun": "Ninguno",
+        "Catégorie": "Categoría",
+        "Commandes": "Comandos",
+        "Configuration": "Configuración",
+        "Configuration avancée": "Configuración avanzada",
+        "Equipement": "Equipo",
+        "Gestion": "Gestión",
+        "Mes télécommandes": "Mis mandos a distancia",
+        "Nom": "Nombre",
+        "Nom de l'équipement": "Nombre del equipo",
+        "Nom de l'équipement telco": "Nombre del equipo telco",
+        "Objet parent": "Objeto padre",
+        "Rechercher": "Buscar",
+        "Sauvegarder": "Guardar",
+        "Supprimer": "Eliminar",
+        "Visible": "Visible"
+    }
+}
