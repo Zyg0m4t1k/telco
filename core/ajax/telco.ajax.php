@@ -23,45 +23,39 @@ try {
     if (!isConnect()) {
         throw new Exception(__('401 - Accès non autorisé', __FILE__));
     }
-	
+
     if (init('action') == 'LaunchAction') {
-		log::add('telco','debug', ' LaunchAction Ajax ');
-        $telco = telco::LaunchAction(init('id'),init('cmd'));
-		ajax::success();
+        log::add('telco', 'debug', ' LaunchAction Ajax ');
+        $telco = telco::LaunchAction(init('id'), init('cmd'));
+        ajax::success();
+    } elseif (init('action') == 'getTelco') {
+        if (init('object_id') == '') {
+            $object = jeeObject::byId($_SESSION['user']->getOptions('defaultDashboardObject'));
+        } else {
+            $object = jeeObject::byId(init('object_id'));
+        }
+
+        if (!is_object($object)) {
+            $object = jeeObject::rootObject();
+        }
+
+        $return = array();
+        $return['eqLogics'] = array();
+
+        if (init('object_id') == '') {
+            foreach (jeeObject::all() as $object) {
+                foreach ($object->getEqLogic(true, false, 'telco') as $telco) {
+                    $return['eqLogics'][] = $telco->toHtml(init('version'));
+                }
+            }
+        } else {
+            foreach ($object->getEqLogic(true, false, 'telco') as $telco) {
+                $return['eqLogics'][] = $telco->toHtml(init('version'));
+            }
+        }
+
+        ajax::success($return);
     }
-	
-	if (init('action') == 'getTelco') {
-		if (init('object_id') == '') {
-			$object = jeeObject::byId($_SESSION['user']->getOptions('defaultDashboardObject'));
-		} else {
-			$object = jeeObject::byId(init('object_id'));
-		}
-		if (!is_object($object)) {
-			$object = jeeObject::rootObject();
-		}
-		$return = array();
-		$return['eqLogics'] = array();
-		if (init('object_id') == '') {
-			foreach (jeeObject::all() as $object) {
-				foreach ($object->getEqLogic(true, false, 'telco') as $telco) {
-					$return['eqLogics'][] = $telco->toHtml(init('version'));
-				}
-			}
-		} else {
-			foreach ($object->getEqLogic(true, false, 'telco') as $telco) {
-				$return['eqLogics'][] = $telco->toHtml(init('version'));
-			}
-			foreach (jeeObject::buildTree($object) as $child) {
-				$telcoss = $child->getEqLogic(true, false, 'telco');
-				if (count($telcoss) > 0) {
-					foreach ($telcoss as $telcos) {
-						$return['eqLogics'][] = $telcos->toHtml(init('version'));
-					}
-				}
-			}
-		}
-		ajax::success($return);
-	}	
 
 
     throw new Exception(__('Aucune méthode correspondante à : ', __FILE__) . init('action'));
@@ -69,4 +63,3 @@ try {
 } catch (Exception $e) {
     ajax::error(displayExeption($e), $e->getCode());
 }
-?>

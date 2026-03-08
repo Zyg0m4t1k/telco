@@ -1,13 +1,39 @@
 {
-	"id" : "telco",
-	"name" : "Telecommande",
-	"description" : "Plugin permettant de créer des télécommandes",
-	"licence" : "AGPL",
-	"author" : "zyg0m4t1k",
-	"require" : "3.3.24",
-	"category" : "organization",
-	"changelog" : "https://zyg0m4t1k.github.io/telco/#language#/changelog",
-	"documentation" : "https://zyg0m4t1k.github.io/telco/#language#/",
-	"language" : ["fr_FR","en_US","de_DE","sp_SP","ru_RU","id_ID","it_IT"],
-	"compatibility" : ["miniplus","smart","rpi","docker","diy","v4"]	
+	"id": "telco",
+	"name": "Telecommande",
+	"description": {
+		"fr_FR": "Ce plugin permet de créer des télécommandes virtuelles et d'assigner des actions (unique,message,scénario...) aux boutons.",
+		"en_US": "",
+		"es_ES": "",
+		"de_DE": "",
+		"it_IT": "",
+		"pt_PT": ""
+	},
+	"licence": "AGPL",
+	"author": "zyg0m4t1k",
+	"require": "4.4",
+	"os": {
+		"min": 11,
+		"max": 13.99
+	},
+	"category": "organization",
+	"mobile": "panel",
+	"changelog": "https://zyg0m4t1k.github.io/docs/plugins/telco/changelog/",
+	"documentation": "https://zyg0m4t1k.github.io/docs/plugins/telco/",
+	"language": [
+		"de_DE",
+		"en_US",
+		"es_ES",
+		"fr_FR",
+		"it_IT",
+		"pt_PT"
+	],
+	"compatibility": [
+		"miniplus",
+		"smart",
+		"rpi",
+		"docker",
+		"diy",
+		"v4"
+	]
 }
