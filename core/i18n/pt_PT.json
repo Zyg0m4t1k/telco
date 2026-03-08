@@ -1,31 +1,31 @@
 {
     "plugins\/telco\/core\/ajax\/telco.ajax.php": {
         "401 - Accès non autorisé": "401 - Acesso não autorizado",
-        "Aucune méthode correspondante à : ": ""
+        "Aucune méthode correspondante à : ": "Nenhum método correspondente para: "
     },
     "plugins\/telco\/core\/class\/telco.class.php": {
-        ". Détails : ": "",
-        "Erreur lors de l\\'éxecution de ": ""
+        ". Détails : ": ". Detalhes: ",
+        "Erreur lors de l\\'éxecution de ": "Erro ao executar "
     },
     "plugins\/telco\/desktop\/js\/telco.js": {
-        " Couleur": "",
-        " Multimedia ": "",
-        " Personnalisée ": "",
+        " Couleur": " Cor",
+        " Multimedia ": " Multimédia ",
+        " Personnalisée ": " Personalizada ",
         "Afficher": "Mostrar",
-        "Il faut donner un nom à l'équipement.": "",
+        "Il faut donner un nom à l'équipement.": "É necessário dar um nome ao equipamento.",
         "Nom": "Nome",
-        "Sélectionner un mot-clé": "Selecione uma palavra-chave",
+        "Sélectionner un mot-clé": "Selecionar uma palavra-chave",
         "Tester": "Testar"
     },
     "plugins\/telco\/desktop\/php\/telco.php": {
-        " Actions à éxécuter ": "",
-        " Couleur ": "",
-        " Nom ": "",
+        " Actions à éxécuter ": " Ações a executar ",
+        " Couleur ": " Cor ",
+        " Nom ": " Nome ",
         "401 - Accès non autorisé": "401 - Acesso não autorizado",
         "Action": "Ação",
         "Actions": "Ações",
         "Activer": "Ativar",
-        "Affichage": "Mostrar",
+        "Affichage": "Apresentação",
         "Ajouter": "Adicionar",
         "Aucun": "Nenhum",
         "Catégorie": "Categoria",
@@ -34,10 +34,10 @@
         "Configuration avancée": "Configuração avançada",
         "Equipement": "Equipamento",
         "Gestion": "Gestão",
-        "Mes télécommandes": "",
+        "Mes télécommandes": "Os meus comandos",
         "Nom": "Nome",
-        "Nom de l'équipement": "",
-        "Nom de l'équipement telco": "",
+        "Nom de l'équipement": "Nome do equipamento",
+        "Nom de l'équipement telco": "Nome do equipamento telco",
         "Objet parent": "Objeto pai",
         "Rechercher": "Pesquisar",
         "Sauvegarder": "Guardar",

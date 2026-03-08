@@ -1,39 +1,25 @@
 {
-	"id": "telco",
-	"name": "Telecommande",
-	"description": {
-		"fr_FR": "Ce plugin permet de créer des télécommandes virtuelles et d'assigner des actions (unique,message,scénario...) aux boutons.",
-		"en_US": "",
-		"es_ES": "",
-		"de_DE": "",
-		"it_IT": "",
-		"pt_PT": ""
-	},
-	"licence": "AGPL",
-	"author": "zyg0m4t1k",
-	"require": "4.4",
-	"os": {
-		"min": 11,
-		"max": 13.99
-	},
-	"category": "organization",
-	"mobile": "panel",
-	"changelog": "https://zyg0m4t1k.github.io/docs/plugins/telco/changelog/",
-	"documentation": "https://zyg0m4t1k.github.io/docs/plugins/telco/",
-	"language": [
-		"de_DE",
-		"en_US",
-		"es_ES",
-		"fr_FR",
-		"it_IT",
-		"pt_PT"
-	],
-	"compatibility": [
-		"miniplus",
-		"smart",
-		"rpi",
-		"docker",
-		"diy",
-		"v4"
-	]
+  "id": "telco",
+  "name": "Telecommande",
+  "description": {
+    "fr_FR": "Ce plugin permet de créer des télécommandes virtuelles et d'assigner des actions (unique, message, scénario...) aux boutons.",
+    "en_US": "This plugin allows you to create virtual remote controls and assign actions (single action, message, scenario...) to buttons.",
+    "es_ES": "Este plugin permite crear controles remotos virtuales y asignar acciones (acción única, mensaje, escenario...) a los botones.",
+    "de_DE": "Dieses Plugin ermöglicht das Erstellen virtueller Fernbedienungen und das Zuweisen von Aktionen (einzelne Aktion, Nachricht, Szenario...) zu den Tasten.",
+    "it_IT": "Questo plugin consente di creare telecomandi virtuali e assegnare azioni (azione singola, messaggio, scenario...) ai pulsanti.",
+    "pt_PT": "Este plugin permite criar comandos virtuais e atribuir ações (ação única, mensagem, cenário...) aos botões."
+  },
+  "licence": "AGPL",
+  "author": "zyg0m4t1k",
+  "require": "4.4",
+  "os": {
+    "min": 11,
+    "max": 13.99
+  },
+  "category": "organization",
+  "mobile": "panel",
+  "changelog": "https://zyg0m4t1k.github.io/docs/plugins/telco/changelog/",
+  "documentation": "https://zyg0m4t1k.github.io/docs/plugins/telco/",
+  "language": ["de_DE", "en_US", "es_ES", "fr_FR", "it_IT", "pt_PT"],
+  "compatibility": ["miniplus", "smart", "rpi", "docker", "diy", "v4", "luna"]
 }

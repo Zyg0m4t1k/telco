@@ -1,47 +1,47 @@
 {
     "plugins\/telco\/core\/ajax\/telco.ajax.php": {
         "401 - Accès non autorisé": "401 - Nicht autorisierter Zugriff",
-        "Aucune méthode correspondante à : ": ""
+        "Aucune méthode correspondante à : ": "Keine passende Methode für: "
     },
     "plugins\/telco\/core\/class\/telco.class.php": {
-        ". Détails : ": "",
-        "Erreur lors de l\\'éxecution de ": ""
+        ". Détails : ": ". Details: ",
+        "Erreur lors de l\\'éxecution de ": "Fehler bei der Ausführung von "
     },
     "plugins\/telco\/desktop\/js\/telco.js": {
-        " Couleur": "",
-        " Multimedia ": "",
-        " Personnalisée ": "",
-        "Afficher": "Anzeige",
-        "Il faut donner un nom à l'équipement.": "",
+        " Couleur": " Farbe",
+        " Multimedia ": " Multimedia ",
+        " Personnalisée ": " Benutzerdefiniert ",
+        "Afficher": "Anzeigen",
+        "Il faut donner un nom à l'équipement.": "Dem Gerät muss ein Name gegeben werden.",
         "Nom": "Name",
         "Sélectionner un mot-clé": "Schlüsselwort auswählen",
-        "Tester": "Prüfung"
+        "Tester": "Testen"
     },
     "plugins\/telco\/desktop\/php\/telco.php": {
-        " Actions à éxécuter ": "",
-        " Couleur ": "",
-        " Nom ": "",
+        " Actions à éxécuter ": " Auszuführende Aktionen ",
+        " Couleur ": " Farbe ",
+        " Nom ": " Name ",
         "401 - Accès non autorisé": "401 - Nicht autorisierter Zugriff",
         "Action": "Aktion",
-        "Actions": "Lager",
+        "Actions": "Aktionen",
         "Activer": "Aktivieren",
         "Affichage": "Anzeige",
-        "Ajouter": "Addieren",
-        "Aucun": "Nein",
+        "Ajouter": "Hinzufügen",
+        "Aucun": "Keine",
         "Catégorie": "Kategorie",
         "Commandes": "Befehle",
         "Configuration": "Konfiguration",
         "Configuration avancée": "Erweiterte Konfiguration",
         "Equipement": "Gerät",
-        "Gestion": "Management",
-        "Mes télécommandes": "",
+        "Gestion": "Verwaltung",
+        "Mes télécommandes": "Meine Fernbedienungen",
         "Nom": "Name",
-        "Nom de l'équipement": "",
-        "Nom de l'équipement telco": "",
+        "Nom de l'équipement": "Name des Geräts",
+        "Nom de l'équipement telco": "Name des Telco-Geräts",
         "Objet parent": "Übergeordnetes Objekt",
-        "Rechercher": "Suchen nach",
-        "Sauvegarder": "Zu schützen",
-        "Supprimer": "Entfernen",
+        "Rechercher": "Suchen",
+        "Sauvegarder": "Speichern",
+        "Supprimer": "Löschen",
         "Visible": "Sichtbar"
     }
 }

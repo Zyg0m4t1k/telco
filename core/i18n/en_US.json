@@ -1,26 +1,26 @@
 {
     "plugins\/telco\/core\/ajax\/telco.ajax.php": {
         "401 - Accès non autorisé": "401 - Unauthorized access",
-        "Aucune méthode correspondante à : ": ""
+        "Aucune méthode correspondante à : ": "No matching method for: "
     },
     "plugins\/telco\/core\/class\/telco.class.php": {
-        ". Détails : ": "",
-        "Erreur lors de l\\'éxecution de ": ""
+        ". Détails : ": ". Details: ",
+        "Erreur lors de l\\'éxecution de ": "Error while executing "
     },
     "plugins\/telco\/desktop\/js\/telco.js": {
-        " Couleur": "",
-        " Multimedia ": "",
-        " Personnalisée ": "",
+        " Couleur": " Color",
+        " Multimedia ": " Multimedia ",
+        " Personnalisée ": " Custom ",
         "Afficher": "Show",
-        "Il faut donner un nom à l'équipement.": "",
+        "Il faut donner un nom à l'équipement.": "You must provide a name for the equipment.",
         "Nom": "Name",
         "Sélectionner un mot-clé": "Select a keyword",
         "Tester": "Test"
     },
     "plugins\/telco\/desktop\/php\/telco.php": {
-        " Actions à éxécuter ": "",
-        " Couleur ": "",
-        " Nom ": "",
+        " Actions à éxécuter ": " Actions to execute ",
+        " Couleur ": " Color ",
+        " Nom ": " Name ",
         "401 - Accès non autorisé": "401 - Unauthorized access",
         "Action": "Action",
         "Actions": "Actions",
@@ -34,10 +34,10 @@
         "Configuration avancée": "Advanced configuration",
         "Equipement": "Equipment",
         "Gestion": "Management",
-        "Mes télécommandes": "",
+        "Mes télécommandes": "My remote controls",
         "Nom": "Name",
-        "Nom de l'équipement": "",
-        "Nom de l'équipement telco": "",
+        "Nom de l'équipement": "Equipment name",
+        "Nom de l'équipement telco": "Telco equipment name",
         "Objet parent": "Parent object",
         "Rechercher": "Search",
         "Sauvegarder": "Save",

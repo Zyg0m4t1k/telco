@@ -1,32 +1,32 @@
 {
     "plugins\/telco\/core\/ajax\/telco.ajax.php": {
         "401 - Accès non autorisé": "401 - Accesso non autorizzato",
-        "Aucune méthode correspondante à : ": ""
+        "Aucune méthode correspondante à : ": "Nessun metodo corrispondente per: "
     },
     "plugins\/telco\/core\/class\/telco.class.php": {
-        ". Détails : ": "",
-        "Erreur lors de l\\'éxecution de ": ""
+        ". Détails : ": ". Dettagli: ",
+        "Erreur lors de l\\'éxecution de ": "Errore durante l'esecuzione di "
     },
     "plugins\/telco\/desktop\/js\/telco.js": {
-        " Couleur": "",
-        " Multimedia ": "",
-        " Personnalisée ": "",
+        " Couleur": " Colore",
+        " Multimedia ": " Multimedia ",
+        " Personnalisée ": " Personalizzata ",
         "Afficher": "Mostra",
-        "Il faut donner un nom à l'équipement.": "",
+        "Il faut donner un nom à l'équipement.": "È necessario assegnare un nome al dispositivo.",
         "Nom": "Nome",
         "Sélectionner un mot-clé": "Seleziona una parola chiave",
-        "Tester": "Prova"
+        "Tester": "Testa"
     },
     "plugins\/telco\/desktop\/php\/telco.php": {
-        " Actions à éxécuter ": "",
-        " Couleur ": "",
-        " Nom ": "",
+        " Actions à éxécuter ": " Azioni da eseguire ",
+        " Couleur ": " Colore ",
+        " Nom ": " Nome ",
         "401 - Accès non autorisé": "401 - Accesso non autorizzato",
         "Action": "Azione",
-        "Actions": "Stock",
-        "Activer": "Attivare",
-        "Affichage": "Affichage",
-        "Ajouter": "Ajouter",
+        "Actions": "Azioni",
+        "Activer": "Attiva",
+        "Affichage": "Visualizzazione",
+        "Ajouter": "Aggiungi",
         "Aucun": "Nessuno",
         "Catégorie": "Categoria",
         "Commandes": "Comandi",
@@ -34,14 +34,14 @@
         "Configuration avancée": "Configurazione avanzata",
         "Equipement": "Dispositivo",
         "Gestion": "Gestione",
-        "Mes télécommandes": "",
+        "Mes télécommandes": "I miei telecomandi",
         "Nom": "Nome",
-        "Nom de l'équipement": "",
-        "Nom de l'équipement telco": "",
+        "Nom de l'équipement": "Nome del dispositivo",
+        "Nom de l'équipement telco": "Nome del dispositivo telco",
         "Objet parent": "Oggetto padre",
-        "Rechercher": "Ricercare",
-        "Sauvegarder": "Sauvegarder",
-        "Supprimer": "Supprimer",
+        "Rechercher": "Cerca",
+        "Sauvegarder": "Salva",
+        "Supprimer": "Elimina",
         "Visible": "Visibile"
     }
 }
