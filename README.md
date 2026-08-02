@@ -1,2 +1,0 @@
-# telco
-Plugin pour jeedom
