@@ -1,5 +1,8 @@
 <button   class="cmd custom_telco" data-type="action" data-subtype="other" data-cmd_id="#id#" style="color:#color#" >#dashicon#</button>
 <script>
-$("button[data-cmd_id=#id#]").children(":first").css("color","#color#");
+(function() {
+  var btn = document.querySelector('button[data-cmd_id="#id#"]')
+  if (btn && btn.firstElementChild) btn.firstElementChild.style.color = '#color#'
+})()
 </script>
 

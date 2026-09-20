@@ -29,6 +29,70 @@ class telco extends eqLogic
 
     /*     * ***********************Methode static*************************** */
 
+    public static function getConfigForCommunity()
+    {
+        $info = '';
+        $all = eqLogic::byType(__CLASS__);
+        $active = 0;
+        $totalCmds = 0;
+        foreach ($all as $eq) {
+            if ($eq->getIsEnable()) {
+                $active++;
+            }
+            $totalCmds += count($eq->getCmd());
+        }
+        // Niveau de log
+        $logLevel = config::byKey('log::level::telco', 'telco', '');
+        if (is_array($logLevel)) {
+            $levels = array(100 => 'debug', 200 => 'info', 300 => 'warning', 400 => 'error', 1000 => 'none');
+            $currentLevel = 'défaut';
+            foreach ($logLevel as $level => $active_log) {
+                if ($active_log == 1 && isset($levels[$level])) {
+                    $currentLevel = $levels[$level];
+                    break;
+                }
+            }
+        } else {
+            $currentLevel = 'défaut';
+        }
+        // Analyse des logs
+        $logFile = log::getPathToLog('telco');
+        $hasError = false;
+        $hasWarning = false;
+        $errorCount = 0;
+        $warningCount = 0;
+        if (file_exists($logFile)) {
+            $lines = file($logFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+            if (is_array($lines)) {
+                foreach ($lines as $line) {
+                    if (strpos($line, '[ERROR]') !== false || strpos($line, '[error]') !== false) {
+                        $hasError = true;
+                        $errorCount++;
+                    }
+                    if (strpos($line, '[WARNING]') !== false || strpos($line, '[warning]') !== false) {
+                        $hasWarning = true;
+                        $warningCount++;
+                    }
+                }
+            }
+        }
+        $info .= '[details=Informations complémentaires]' . "\n";
+        $info .= 'Nb télécommandes : ' . count($all) . ' (actives : ' . $active . ')' . "\n";
+        $info .= 'Nb commandes total : ' . $totalCmds . "\n";
+        $info .= 'Niveau de log : ' . $currentLevel . "\n";
+        if ($hasError) {
+            $info .= '⚠ Erreurs dans les logs : ' . $errorCount . "\n";
+        }
+        if ($hasWarning) {
+            $info .= '⚠ Warnings dans les logs : ' . $warningCount . "\n";
+        }
+        if (!$hasError && !$hasWarning) {
+            $info .= 'Logs : OK (aucune erreur ni warning)' . "\n";
+        }
+        $info .= '[/details]' . "\n";
+        return $info;
+    }
+
     public static function LaunchAction($id, $cmd)
     {
         $eqLogic = eqLogic::byId($id);

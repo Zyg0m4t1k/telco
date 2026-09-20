@@ -14,6 +14,27 @@
  * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
  */
 
+document.querySelector('.eqLogicThumbnailDisplay').addEventListener('click', function(e) {
+    if (e.target.closest('[data-action="createCommunityPost"]')) {
+        jeedom.plugin.createCommunityPost({
+            type: eqType,
+            error: function(error) {
+                domUtils.hideLoading();
+                jeedomUtils.showAlert({message: error.message, level: 'danger'});
+            },
+            success: function(data) {
+                var link = document.createElement('a');
+                link.href = data.url;
+                link.target = '_blank';
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        });
+    }
+});
+
 $('#table_custom').sortable({
   axis: 'y',
   cursor: 'move',
@@ -80,7 +101,7 @@ $('body').delegate('.listCmdActionOn', 'click', function () {
     el.value(result.human);
     jeedom.cmd.displayActionOption(el.val(), '', function (html) {
       el.closest('.action').find('.actionOptions').html(html);
-      taAutosize();
+      jeedomUtils.taAutosize();
     });
   });
 });
@@ -91,7 +112,7 @@ $('body').delegate('.listAction', 'click', function () {
     el.value(result.human);
     jeedom.cmd.displayActionOption(el.val(), '', function (html) {
       el.closest('.action').find('.actionOptions').html(html);
-      taAutosize();
+      jeedomUtils.taAutosize();
     });
   });
 });
