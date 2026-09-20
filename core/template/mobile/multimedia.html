@@ -86,34 +86,33 @@
 </div>
 
 <script>
-
-$('.button_#id#').on('click', function() {
-	$.ajax({
-		type: 'POST',
-		url: 'plugins/telco/core/ajax/telco.ajax.php',
-		data: {
-			action: 'LaunchAction',
-			id: $(this).attr('value'),
-			cmd: this.name
-		},
-		dataType: 'json',
-		error: function (request, status, error) {
-			handleAjaxError(request, status, error);
-		},
-		success: function (data) {
-			
-			if (data.state != 'ok') {
-				$('#div_alert').showAlert({message: data.result, level: 'danger'});
-				return;
-			}	
-					
-		}
-		
-   });
-	
-});
-
-
+(function() {
+  var widget = document.getElementById('id_#id#')
+  if (!widget) return
+  widget.querySelectorAll('.button_#id#').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      domUtils.ajax({
+        type: 'POST',
+        url: 'plugins/telco/core/ajax/telco.ajax.php',
+        data: {
+          action: 'LaunchAction',
+          id: btn.value,
+          cmd: btn.name
+        },
+        dataType: 'json',
+        error: function(request, status, error) {
+          handleAjaxError(request, status, error)
+        },
+        success: function(data) {
+          if (data.state != 'ok') {
+            jeedomUtils.showAlert({message: data.result, level: 'danger'})
+            return
+          }
+        }
+      })
+    })
+  })
+})()
 </script>
 
 <style>

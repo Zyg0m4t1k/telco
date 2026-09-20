@@ -11,6 +11,7 @@
 	},
 	"licence": "AGPL",
 	"author": "zyg0m4t1k",
+	"pluginVersion": "1.0",
 	"require": "4.4",
 	"os": {
 		"min": 11,
